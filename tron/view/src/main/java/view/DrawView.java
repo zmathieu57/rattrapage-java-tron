@@ -3,8 +3,13 @@ package view;
 import java.awt.*;
 import javax.swing.*;
 
-public class DrawView extends JPanel {
+public class DrawView extends JPanel implements IView {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	public int a;
 	public int b;
 	public int c;

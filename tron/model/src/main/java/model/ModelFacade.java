@@ -11,14 +11,30 @@ import model.dao.ExampleDAO;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public final class ModelFacade implements IModel {
+public class ModelFacade implements IModel {
 
+	private Permeability permeability;
     /**
      * Instantiates a new model facade.
      */
-    public ModelFacade() {
+    public ModelFacade(Permeability permeability) {
         super();
+        this.setPermeability(permeability);
     }
+    
+    public void disapear() {
+    	
+    }
+    
+	public Permeability getPermeability() {
+		return permeability;
+	}
+	
+	public void setPermeability(Permeability permeability) {
+		this.permeability = permeability;
+	}
+    
+    
 
     /*
      * (non-Javadoc)

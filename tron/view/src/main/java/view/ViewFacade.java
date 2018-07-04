@@ -8,22 +8,13 @@ import javax.swing.JOptionPane;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public class ViewFacade implements IView {
+public class ViewFacade {
 
     /**
      * Instantiates a new view facade.
      */
     public ViewFacade() {
         super();
-    }
-
-    /*
-     * (non-Javadoc)
-     * @see view.IView#displayMessage(java.lang.String)
-     */
-    @Override
-    public final void displayMessage(final String message) {
-        JOptionPane.showMessageDialog(null, message);
     }
 
 }

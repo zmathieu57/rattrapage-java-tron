@@ -3,8 +3,10 @@ package view;
 import java.awt.*;
 import javax.swing.*;
 
-public class GameView extends JFrame{
-	
+public class GameView extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+
 	public GameView()  {
 		JFrame game = new JFrame();
 		game.setTitle("Tron : Game");

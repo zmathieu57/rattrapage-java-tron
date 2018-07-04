@@ -4,8 +4,10 @@ import java.awt.*;
 import javax.swing.*;
 
 
-public class MainView extends JFrame {
-	
+public class MainView extends JFrame implements IMainView {
+
+	private static final long serialVersionUID = 1L;
+
 	public MainView()  {
 		JFrame menu = new JFrame();
 		menu.setTitle("Tron : Menu");
@@ -17,31 +19,39 @@ public class MainView extends JFrame {
 		panel1.setBackground(Color.GRAY);
 		menu.setContentPane(panel1);
 		
-		JLabel texte0 = new JLabel("Enter an ID before launching the game");
-		menu.add(texte0);
+		JLabel text1 = text("Enter an ID before launching the game");
+		JTextField seizure1 = seizure(15);
+		JLabel text2 = text("Player 1");
+		JTextField seizure2 = seizure(15);
+		JLabel text3 = text("Player 3");
+		JButton button1 = button("Play Game");
+		JButton button2 = button("Quit Game");
 		
-		JTextField saisie1 = new JTextField();
-		saisie1.setColumns(15);
-		menu.add(saisie1);
-		
-		JLabel texte1 = new JLabel("User 1");
-		menu.add(texte1);
-		
-		JTextField saisie2 = new JTextField();
-		saisie2.setColumns(15);
-		menu.add(saisie2);
-		
-		JLabel texte2 = new JLabel("User 2");
-		menu.add(texte2);
-		
-		JButton bouton1 = new JButton("Play Game");
-		menu.add(bouton1);
-		
-		JButton bouton2 = new JButton("Quit Game");
-		menu.add(bouton2);
+		menu.add(text1);
+		menu.add(seizure1);
+		menu.add(text2);
+		menu.add(seizure2);
+		menu.add(text3);
+		menu.add(button1);
+		menu.add(button2);
 		
 		menu.setVisible(true);
 		
 	}
-
+	
+	public JLabel text(String f) {
+		JLabel write = new JLabel(f);
+		return write;
+	}
+	
+	public JTextField seizure(int g) {
+		JTextField entrer = new JTextField();
+		entrer.setColumns(g);
+		return entrer;
+	}
+	
+	public JButton button(String h) {
+		JButton bouton = new JButton(h);
+		return bouton;
+	}
 }

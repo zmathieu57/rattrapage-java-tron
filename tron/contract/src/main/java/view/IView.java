@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Graphics;
+
 /**
  * <h1>The Interface IView.</h1>
  *
@@ -7,12 +9,10 @@ package view;
  * @version 1.0
  */
 public interface IView {
-
-    /**
-     * Display message.
-     *
-     * @param message
-     *            the message
-     */
-    void displayMessage(String message);
+    
+    static void paintComponent(Graphics g1) {
+		// TODO Auto-generated method stub
+		
+	}
+    
 }
