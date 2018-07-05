@@ -1,0 +1,4 @@
+CREATE TABLE Winner (ID_Game int NOT NULL AUTO_INCREMENT,
+		     Winner Varchar(255) NOT NULL,
+		     PRIMARY KEY(ID_Game)
+);
