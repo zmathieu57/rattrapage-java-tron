@@ -1,0 +1,4 @@
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `insertWinner` (IN winner Varchar(255)) NO SQL
+INSERT INTO  winner (Winner)
+VALUES(winner)
