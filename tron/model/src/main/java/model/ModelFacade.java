@@ -13,28 +13,12 @@ import model.dao.ExampleDAO;
  */
 public class ModelFacade implements IModel {
 
-	private Permeability permeability;
     /**
      * Instantiates a new model facade.
      */
-    public ModelFacade(Permeability permeability) {
+    public ModelFacade() {
         super();
-        this.setPermeability(permeability);
     }
-    
-    public void disapear() {
-    	
-    }
-    
-	public Permeability getPermeability() {
-		return permeability;
-	}
-	
-	public void setPermeability(Permeability permeability) {
-		this.permeability = permeability;
-	}
-    
-    
 
     /*
      * (non-Javadoc)

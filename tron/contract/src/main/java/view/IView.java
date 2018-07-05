@@ -1,6 +1,12 @@
 package view;
 
+import java.awt.Color;
 import java.awt.Graphics;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  * <h1>The Interface IView.</h1>
@@ -9,10 +15,13 @@ import java.awt.Graphics;
  * @version 1.0
  */
 public interface IView {
-    
-    static void paintComponent(Graphics g1) {
-		// TODO Auto-generated method stub
+
+	JFrame window( String r, int t, int u, Color v);
+	
+	JLabel text(String x);
+	
+	JTextField seizure(int y);
 		
-	}
+	JButton button(String z);
     
 }

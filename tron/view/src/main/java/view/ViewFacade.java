@@ -1,6 +1,11 @@
 package view;
 
-import javax.swing.JOptionPane;
+import java.awt.Color;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  * <h1>The Class ViewFacade provides a facade of the View component.</h1>
@@ -8,13 +13,63 @@ import javax.swing.JOptionPane;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public class ViewFacade {
+public class ViewFacade implements IView {
 
     /**
      * Instantiates a new view facade.
      */
-    public ViewFacade() {
-        super();
+    public ViewFacade(int s) {    	
+    	if (s == 1) {
+    		JFrame window = window("Tron : Main", 275, 175, Color.gray);
+    		JLabel text1 = text("Enter an ID before launching the game");
+    		JTextField seizure1 = seizure(15);
+    		JLabel text2 = text("Player 1");
+    		JTextField seizure2 = seizure(15);
+    		JLabel text3 = text("Player 3");
+    		JButton button1 = button("Play Game");
+    		JButton button2 = button("Quit Game");
+		
+    		window.add(text1);
+    		window.add(seizure1);
+    		window.add(text2);
+    		window.add(seizure2);
+    		window.add(text3);
+    		window.add(button1);
+    		window.add(button2);
+    		window.setVisible(true);
+    	}
+    	else if (s == 2) {
+    		JFrame window = window("Tron : Game", 600, 400, Color.darkGray);
+    		window.setVisible(true);
+    	}
+    	
+				
     }
+    
+    public JFrame window( String r, int t, int u, Color v) {    	
+    	JFrame window = new JFrame();
+		window.setTitle(r);
+		window.setSize(t,u);
+		window.setBackground(v);
+		window.setLocationRelativeTo(null);
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		return window;
+    }
+    
+    public JLabel text(String x) {
+		JLabel write = new JLabel(x);
+		return write;
+	}
+	
+	public JTextField seizure(int y) {		
+		JTextField entrer = new JTextField();
+		entrer.setColumns(y);
+		return entrer;
+	}
+	
+	public JButton button(String z) {		
+		JButton bouton = new JButton(z);
+		return bouton;
+	}
 
 }

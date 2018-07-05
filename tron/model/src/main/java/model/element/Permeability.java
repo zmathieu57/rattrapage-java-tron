@@ -1,4 +1,4 @@
-package model;
+package model.element;
 
 public enum Permeability {
 	BIKE,
