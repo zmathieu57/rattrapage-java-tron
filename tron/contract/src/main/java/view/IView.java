@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -16,12 +17,20 @@ import javax.swing.JTextField;
  */
 public interface IView {
 
+	public void main();
+	
+    public void game();
+	
 	JFrame window( String r, int t, int u, Color v);
+	
+	public JPanel draw(Color s);
 	
 	JLabel text(String x);
 	
 	JTextField seizure(int y);
 		
 	JButton button(String z);
+	
+	public void showWindow();
     
 }

@@ -1,10 +1,13 @@
 package view;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -13,38 +16,50 @@ import javax.swing.JTextField;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public class ViewFacade implements IView {
+public class ViewFacade implements IView, ActionListener {
 
+	JFrame window1 = window("Tron : Main", 275, 175, Color.gray);
+	JFrame window2 = window("Tron : Game", 600, 400, Color.darkGray);
+	JPanel zonedraw = draw(Color.white);
+	JLabel text1 = text("Enter an ID before launching the game");
+	JTextField seizure1 = seizure(15);
+	JLabel text2 = text("Player 1");
+	JTextField seizure2 = seizure(15);
+	JLabel text3 = text("Player 2");
+	JButton button1 = button("Play Game");
+	JButton button2 = button("Quit Game");
+	
     /**
      * @author mathi
      * Instantiates a new view facade.
      */
-    public ViewFacade(int s) {    	
-    	if (s == 1) {
-    		JFrame window = window("Tron : Main", 275, 175, Color.gray);
-    		JLabel text1 = text("Enter an ID before launching the game");
-    		JTextField seizure1 = seizure(15);
-    		JLabel text2 = text("Player 1");
-    		JTextField seizure2 = seizure(15);
-    		JLabel text3 = text("Player 3");
-    		JButton button1 = button("Play Game");
-    		JButton button2 = button("Quit Game");
-		
-    		window.add(text1);
-    		window.add(seizure1);
-    		window.add(text2);
-    		window.add(seizure2);
-    		window.add(text3);
-    		window.add(button1);
-    		window.add(button2);
-    		window.setVisible(true);
-    	}
-    	else if (s == 2) {
-    		JFrame window = window("Tron : Game", 600, 400, Color.darkGray);
-    		window.setVisible(true);
-    	}
-    	
-				
+    public ViewFacade() {    	
+    	main();
+    }
+    
+    /**
+     * @author mathi
+     */
+    public void main() {
+    	button1.addActionListener(this);
+    	button2.addActionListener(this);
+
+		zonedraw.add(text1);
+		zonedraw.add(seizure1);
+		zonedraw.add(text2);
+		zonedraw.add(seizure2);
+		zonedraw.add(text3);
+		zonedraw.add(button1);
+		zonedraw.add(button2);
+		window1.add(zonedraw);
+		window1.setVisible(true);
+    }
+    
+    /**
+     * @author mathi
+     */
+    public void game() {
+    	window2.setVisible(true);
     }
     
     /**
@@ -58,6 +73,16 @@ public class ViewFacade implements IView {
 		window.setLocationRelativeTo(null);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		return window;
+    }
+    
+    /**
+     * @author mathi
+     * 
+     */
+    public JPanel draw(Color s) {
+    	JPanel draw = new JPanel();
+    	draw.setBackground(s);
+    	return draw;
     }
     
     /**
@@ -84,5 +109,29 @@ public class ViewFacade implements IView {
 		JButton bouton = new JButton(z);
 		return bouton;
 	}
+	
+	/**
+	 * @author mathi
+	 */
+	public void showWindow() {
+		main();		
+	}
+	
+	/**
+	 * @author mathi
+	 */
+	public  void    actionPerformed(ActionEvent e)
+    {
+        Object  source=e.getSource();
+        
+        if  (source==button1) {
+        	game();
+        	window1.dispose();
+        }
+        else if (source==button2) {
+        	System.exit(0);
+        }
+            
+    }
 
 }
