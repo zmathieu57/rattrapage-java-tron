@@ -11,6 +11,10 @@ public class ElementFactory {
 	private Bike bike1;
 	private Bike bike2;
 
+	/**
+	 * @author mathi
+	 * @param g
+	 */
 	public void paintComponent(Graphics g) {
 		
 		setWall1(new Wall(Permeability.WALL, Color.cyan, g,10, 10, 590, 10));

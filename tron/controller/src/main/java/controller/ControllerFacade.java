@@ -5,6 +5,7 @@ import java.util.List;
 
 import model.Example;
 import model.IModel;
+import model.element.IMove;
 import view.IView;
 
 /**
@@ -20,6 +21,9 @@ public class ControllerFacade implements IController {
 
     /** The model. */
     private final IModel model;
+    
+    
+    private final IMove move;
 
     /**
      * Instantiates a new controller facade.
@@ -55,21 +59,16 @@ public class ControllerFacade implements IController {
         this.getView().displayMessage(message.toString());
     }
 
-    /**
-     * Gets the view.
-     *
-     * @return the view
-     */
+       
     public IView getView() {
         return this.view;
     }
 
-    /**
-     * Gets the model.
-     *
-     * @return the model
-     */
     public IModel getModel() {
         return this.model;
     }
+
+	public IMove getMove() {
+		return move;
+	}
 }

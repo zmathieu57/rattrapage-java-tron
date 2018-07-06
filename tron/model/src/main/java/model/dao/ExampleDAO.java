@@ -14,23 +14,20 @@ import model.Example;
  */
 public abstract class ExampleDAO extends AbstractDAO {
 
-    /** The sql example by id. */
+    /** The sql insert winner. */
     private static String sqlinsertWinner   = "{call insertWinner(?)}";
 
     /** The id column index. */
     private static int    idColumnIndex    = 1;
 
-    /** The name column index. */
+    /** The winner column index. */
     private static int    winnerColumnIndex  = 2;
 
     /**
-     * Gets the example by id.
-     *
-     * @param id
-     *            the id
-     * @return the example by id
+     * 
+     * @param winner
+     * @return
      * @throws SQLException
-     *             the SQL exception
      */
     public static Example getinsertWinner(final String winner) throws SQLException {
         final CallableStatement callStatement = prepareCall(sqlinsertWinner);

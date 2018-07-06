@@ -14,6 +14,7 @@ import model.dao.ExampleDAO;
 public class ModelFacade implements IModel {
 
     /**
+     * @author mathi
      * Instantiates a new model facade.
      */
     public ModelFacade() {

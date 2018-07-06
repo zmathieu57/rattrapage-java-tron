@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 public class ViewFacade implements IView {
 
     /**
+     * @author mathi
      * Instantiates a new view facade.
      */
     public ViewFacade(int s) {    	
@@ -46,6 +47,9 @@ public class ViewFacade implements IView {
 				
     }
     
+    /**
+     * @author mathi
+     */
     public JFrame window( String r, int t, int u, Color v) {    	
     	JFrame window = new JFrame();
 		window.setTitle(r);
@@ -56,17 +60,26 @@ public class ViewFacade implements IView {
 		return window;
     }
     
+    /**
+     * @author mathi
+     */
     public JLabel text(String x) {
 		JLabel write = new JLabel(x);
 		return write;
 	}
 	
+    /**
+     * @author mathi
+     */
 	public JTextField seizure(int y) {		
 		JTextField entrer = new JTextField();
 		entrer.setColumns(y);
 		return entrer;
 	}
 	
+	/**
+	 * @author mathi
+	 */
 	public JButton button(String z) {		
 		JButton bouton = new JButton(z);
 		return bouton;
