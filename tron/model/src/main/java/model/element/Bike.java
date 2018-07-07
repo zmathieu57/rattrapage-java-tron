@@ -46,6 +46,7 @@ public class Bike extends Element implements IMove {
 		y = this.position_y;
 		Up.setColor(this.getColor());
 		Up.drawLine(x,y,x,y+10);
+		setDirection(Direction.UP);
 	}
 	
 	/**
@@ -56,6 +57,7 @@ public class Bike extends Element implements IMove {
 		y = this.position_y;
 		Down.setColor(this.getColor());
 		Down.drawLine(x,y,x,y-10);
+		setDirection(Direction.DOWN);
 	}
 	
 	/**
@@ -66,6 +68,7 @@ public class Bike extends Element implements IMove {
 		y = this.position_y;
 		Left.setColor(this.getColor());
 		Left.drawLine(x,y,x-10,y);
+		setDirection(Direction.LEFT);
 	}
 	
 	/**
@@ -76,6 +79,31 @@ public class Bike extends Element implements IMove {
 		y = this.position_y;
 		Right.setColor(this.getColor());
 		Right.drawLine(x,y,x+10,y);
+		setDirection(Direction.RIGHT);
+	}
+	
+	/**
+	 * @author mathi
+	 * @param direction
+	 * @param go
+	 * @param x
+	 * @param y
+	 */
+	public void go(Direction direction, Graphics go, int x, int y) {
+		
+		if (direction == Direction.UP) {
+			moveUp(go, x, y);
+			}
+		else if (direction == Direction.DOWN) {
+			moveDown(go, x, y);
+		}
+		else if (direction == Direction.RIGHT) {
+			moveRight(go, x, y);
+		}
+		else if (direction == Direction.LEFT) {
+			moveLeft(go, x, y);
+		}
+		
 	}
 	
 	/* Getter and Setter*/

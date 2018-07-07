@@ -28,6 +28,8 @@ public class ViewFacade implements IView, ActionListener {
 	JLabel text3 = text("Player 2");
 	JButton button1 = button("Play Game");
 	JButton button2 = button("Quit Game");
+	String user1;
+	String user2;
 	
     /**
      * @author mathi
@@ -127,6 +129,8 @@ public class ViewFacade implements IView, ActionListener {
         if  (source==button1) {
         	game();
         	window1.dispose();
+        	user1 = seizure1.getText();
+        	user2 = seizure2.getText();
         }
         else if (source==button2) {
         	System.exit(0);
