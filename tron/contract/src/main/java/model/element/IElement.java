@@ -1,7 +1,6 @@
 package model.element;
 
 import model.element.Permeability;
-
 public interface IElement {
 	
 	Permeability getPermeability();
@@ -10,5 +9,4 @@ public interface IElement {
 		// TODO Auto-generated method stub
 		
 	}
-	
 }

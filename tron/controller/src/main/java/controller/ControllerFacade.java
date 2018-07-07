@@ -53,6 +53,7 @@ public class ControllerFacade implements IController {
      */
     public void start() throws SQLException {
         this.getView().showWindow();
+		this.getModel().getinsertUser(this.getView().getUser1(), this.getView().getUser2());
 
     }
 
@@ -90,7 +91,7 @@ break;
     			break;
     			
     			case Permeability.DEAD:
-    				Bike d = (Bike) this.getModel().getTabMapXY(somethink_x, somethink_y) ;
+    				Bike d = (Bike) this.getModel().go(somethink_x, somethink_y) ;
     				d.setAlive(false);
     				return true;
     			break;
@@ -98,74 +99,113 @@ break;
     	}
 }
     
-    public void Move(Graphics move, int x, int y, Direction direction, Permeability permeability, int key)
+    public void Move1(Graphics move1, int x1, int y1, Direction direction1, Permeability permeability1, int key1)
 	{
-		if (key != 32) {
+		if (key1 != 32) {
 			
-		if (collision(move, x, y, direction, permeability, key) == false && this.getMove().isAlive() == true) {
+		if (collision(move1, x1, y1, direction1, permeability1, key1) == false && this.getMove().isAlive() == true) {
             
-			switch (key) {
+			switch (key1) {
             case 113: /*Q*/
-            	if(direction == Direction.UP) {
-            		this.getMove().moveLeft(move, x, y);
+            	if(direction1 == Direction.UP) {
+            		this.getMove().moveLeft(move1, x1, y1);
             	}
-            	else if (direction == Direction.LEFT) {
-            		this.getMove().moveDown(move, x, y);
+            	else if (direction1 == Direction.LEFT) {
+            		this.getMove().moveDown(move1, x1, y1);
             	}
-            	else if (direction == Direction.DOWN) {
-            		this.getMove().moveRight(move, x, y);
+            	else if (direction1 == Direction.DOWN) {
+            		this.getMove().moveRight(move1, x1, y1);
             	}
-            	else if (direction == Direction.RIGHT) {
-            		this.getMove().moveUp(move, x, y);
+            	else if (direction1 == Direction.RIGHT) {
+            		this.getMove().moveUp(move1, x1, y1);
             	}
                 break;
             case 100:/*D*/
-            	if(direction == Direction.UP) {
-            		this.getMove().moveRight(move, x, y);
+            	if(direction1 == Direction.UP) {
+            		this.getMove().moveRight(move1, x1, y1);
             	}
-            	else if (direction == Direction.RIGHT) {
-            		this.getMove().moveDown(move, x, y);
+            	else if (direction1 == Direction.RIGHT) {
+            		this.getMove().moveDown(move1, x1, y1);
             	}
-            	else if (direction == Direction.DOWN) {
-            		this.getMove().moveLeft(move, x, y);
+            	else if (direction1 == Direction.DOWN) {
+            		this.getMove().moveLeft(move1, x1, y1);
             	}
-            	else if (direction == Direction.LEFT) {
-            		this.getMove().moveUp(move, x, y);
+            	else if (direction1 == Direction.LEFT) {
+            		this.getMove().moveUp(move1, x1, y1);
             	}
             	break;
+            default:
+            	if(direction1 == Direction.UP) {
+            		this.getMove().moveUp(move1, x1, y1);
+            	}
+            	else if (direction1 == Direction.LEFT) {
+            		this.getMove().moveLeft(move1, x1, y1);
+            	}
+            	else if (direction1 == Direction.DOWN) {
+            		this.getMove().moveDown(move1, x1, y1);
+            	}
+            	else if (direction1 == Direction.RIGHT) {
+            		this.getMove().moveRight(move1, x1, y1);
+            	}
+                break;
+            }
+            key1 = 0; 
+		}
+		return;
+	}
+}
+    
+    public void Move2(Graphics move2, int x2, int y2, Direction direction2, Permeability permeability2, int key2)
+	{
+		if (key2 != 32) {
+			
+		if (collision(move2, x2, y2, direction2, permeability2, key2) == false && this.getMove().isAlive() == true) {
+            
+			switch (key2) {
             case 52:/*4*/
-            	if(direction == Direction.UP) {
-            		this.getMove().moveLeft(move, x, y);
+            	if(direction2 == Direction.UP) {
+            		this.getMove().moveLeft(move2, x2, y2);
             	}
-            	else if (direction == Direction.LEFT) {
-            		this.getMove().moveDown(move, x, y);
+            	else if (direction2 == Direction.LEFT) {
+            		this.getMove().moveDown(move2, x2, y2);
             	}
-            	else if (direction == Direction.DOWN) {
-            		this.getMove().moveRight(move, x, y);
+            	else if (direction2 == Direction.DOWN) {
+            		this.getMove().moveRight(move2, x2, y2);
             	}
-            	else if (direction == Direction.RIGHT) {
-            		this.getMove().moveUp(move, x, y);
+            	else if (direction2 == Direction.RIGHT) {
+            		this.getMove().moveUp(move2, x2, y2);
             	}
             	break;
             case 54:/*6*/
-            	if(direction == Direction.UP) {
-            		this.getMove().moveRight(move, x, y);
+            	if(direction2 == Direction.UP) {
+            		this.getMove().moveRight(move2, x2, y2);
             	}
-            	else if (direction == Direction.RIGHT) {
-            		this.getMove().moveDown(move, x, y);
+            	else if (direction2 == Direction.RIGHT) {
+            		this.getMove().moveDown(move2, x2, y2);
             	}
-            	else if (direction == Direction.DOWN) {
-            		this.getMove().moveLeft(move, x, y);
+            	else if (direction2 == Direction.DOWN) {
+            		this.getMove().moveLeft(move2, x2, y2);
             	}
-            	else if (direction == Direction.LEFT) {
-            		this.getMove().moveUp(move, x, y);
+            	else if (direction2 == Direction.LEFT) {
+            		this.getMove().moveUp(move2, x2, y2);
             	}
             	break;  
             default:
-				System.out.println("Not supported order ");
-				break;
+            	if(direction2 == Direction.UP) {
+            		this.getMove().moveUp(move2, x2, y2);
+            	}
+            	else if (direction2 == Direction.LEFT) {
+            		this.getMove().moveLeft(move2, x2, y2);
+            	}
+            	else if (direction2 == Direction.DOWN) {
+            		this.getMove().moveDown(move2, x2, y2);
+            	}
+            	else if (direction2 == Direction.RIGHT) {
+            		this.getMove().moveRight(move2, x2, y2);
+            	}
+                break;
             }
-            key = 0; 
+            key2 = 0; 
 		}
 		return;
 	}

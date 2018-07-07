@@ -3,12 +3,15 @@ package view;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import controller.IController;
 
 /**
  * <h1>The Class ViewFacade provides a facade of the View component.</h1>
@@ -17,10 +20,15 @@ import javax.swing.JTextField;
  * @version 1.0
  */
 public class ViewFacade implements IView, ActionListener {
+	
+	IController controller;
+
+	
 
 	JFrame window1 = window("Tron : Main", 275, 175, Color.gray);
 	JFrame window2 = window("Tron : Game", 600, 400, Color.darkGray);
 	JPanel zonedraw = draw(Color.white);
+	JPanel zonedraw2 = draw(Color.darkGray);
 	JLabel text1 = text("Enter an ID before launching the game");
 	JTextField seizure1 = seizure(15);
 	JLabel text2 = text("Player 1");
@@ -61,6 +69,7 @@ public class ViewFacade implements IView, ActionListener {
      * @author mathi
      */
     public void game() {
+    	window2.add(zonedraw2);
     	window2.setVisible(true);
     }
     
@@ -134,8 +143,50 @@ public class ViewFacade implements IView, ActionListener {
         }
         else if (source==button2) {
         	System.exit(0);
-        }
-            
+        }   
     }
+	
+	public void keyTyped(KeyEvent key) {
 
+    }
+    
+	
+	/**
+	 * @param key for send the pressed key
+	 */
+    public void keyPressed(KeyEvent key) {
+    	int nombre = key.getKeyCode();
+		this.getController().Move1();
+		this.getController().Move2();
+    }
+    
+    public void keyReleased(KeyEvent key) {
+
+    }
+    
+
+    public IController getController() {
+		return controller;
+	}
+
+	public void setController(IController controller) {
+		this.controller = controller;
+	}
+	
+
+	public String getUser1() {
+		return user1;
+	}
+
+	public void setUser1(String user1) {
+		this.user1 = user1;
+	}
+
+	public String getUser2() {
+		return user2;
+	}
+
+	public void setUser2(String user2) {
+		this.user2 = user2;
+	}
 }

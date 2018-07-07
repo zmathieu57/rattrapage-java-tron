@@ -22,4 +22,6 @@ public interface IModel {
      */
     Example getinsertWinner(String Winner) throws SQLException;
 
+	Example getinsertUser(String userone, String usertwo) throws SQLException;
+
 }

@@ -32,5 +32,11 @@ public interface IView {
 	JButton button(String z);
 	
 	public void showWindow();
+	
+	public void User(String user1, String user2);
+	
+	public String getUser1();
+	
+	public String getUser2();
     
 }

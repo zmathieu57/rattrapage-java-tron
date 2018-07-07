@@ -1,0 +1,4 @@
+CREATE DEFINER=`root`@`localhost` 
+PROCEDURE `insertUser` (IN userone Varchar(255), IN usertwo Varcher(255)) NO SQL
+INSERT INTO  user (User1, User2)
+VALUES(userone, usertwo)

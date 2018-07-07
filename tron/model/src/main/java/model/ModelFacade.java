@@ -29,4 +29,9 @@ public class ModelFacade implements IModel {
     public Example getinsertWinner(final String Winner) throws SQLException {
         return ExampleDAO.getinsertWinner(Winner);
     }
+    
+    @Override
+    public Example getinsertUser(final String userone, final String usertwo) throws SQLException {
+        return ExampleDAO.getinsertUser(userone, usertwo);
+    }
 }
