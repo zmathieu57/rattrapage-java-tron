@@ -1,4 +1,4 @@
-package model;
+package modelTest;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,6 +7,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import model.Example;
 
 public class ExampleTest {
     private Example example;
