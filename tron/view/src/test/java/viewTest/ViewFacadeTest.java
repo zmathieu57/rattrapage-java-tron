@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import view.ViewFacade;
+
 public class ViewFacadeTest {
 	
 	@Test
@@ -78,21 +80,29 @@ public class ViewFacadeTest {
 	
 	@Test
 	public final void testgetuser1() {
-		fail("Not yet implemented");
+		ViewFacade viewfacade = new ViewFacade();
+		viewfacade.setUser1("testgetuser1");
+		assertTrue(viewfacade.getUser1() == "testgetuser1");
 	}
 	
 	@Test
 	public final void testsetuser1() {
-		fail("Not yet implemented");
-	}
+		ViewFacade viewfacade = new ViewFacade();
+		viewfacade.setUser1("testgetuser1");
+		assertTrue(viewfacade.getUser1() == "testgetuser1");
+		}
 	
 	@Test
 	public final void testgetuser2() {
-		fail("Not yet implemented");
+		ViewFacade viewfacade = new ViewFacade();
+		viewfacade.setUser2("testgetuser2");
+		assertTrue(viewfacade.getUser2() == "testgetuser2");
 	}
 	
 	@Test
 	public final void testsetuser2() {
-		fail("Not yet implemented");
-	}
+		ViewFacade viewfacade = new ViewFacade();
+		viewfacade.setUser2("testgetuser2");
+		assertTrue(viewfacade.getUser2() == "testgetuser2");
+		}
 }

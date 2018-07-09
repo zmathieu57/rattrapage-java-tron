@@ -2,7 +2,13 @@ package model.element.test;
 
 import static org.junit.Assert.*;
 
+import java.awt.Color;
+
 import org.junit.Test;
+
+import model.element.Direction;
+import model.element.Permeability;
+import model.element.Bike;
 
 public class BikeTest {
 	
@@ -38,21 +44,29 @@ public class BikeTest {
 	
 	@Test
 	public final void testgetdirection() {
-		fail("Not yet implemented");
-	}
+		Bike bike = new Bike(Permeability.WALL, Color.red, Direction.UP, 10, 20, false);
+		bike.setDirection(Direction.UP);
+		assertTrue(bike.getDirection() == Direction.UP);
+		}
 	
 	@Test
 	public final void testsetdirection() {
-		fail("Not yet implemented");
-	}
+		Bike bike = new Bike(Permeability.WALL, Color.red, Direction.UP, 10, 20, false);
+		bike.setDirection(Direction.UP);
+		assertTrue(bike.getDirection() == Direction.UP);
+		}
 	
 	@Test
 	public final void testisalive() {
-		fail("Not yet implemented");
-	}
+		Bike bike = new Bike(Permeability.WALL, Color.red, Direction.UP, 10, 20, false);
+		bike.setAlive(false);
+		assertTrue(bike.isAlive() == false);
+		}
 	
 	@Test
 	public final void testsetalive() {
-		fail("Not yet implemented");
-	}
+		Bike bike = new Bike(Permeability.WALL, Color.red, Direction.UP, 10, 20, false);
+		bike.setAlive(false);
+		assertTrue(bike.isAlive() == false);
+		}
 }
