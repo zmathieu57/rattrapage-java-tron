@@ -28,6 +28,8 @@ public class ControllerFacade implements IController {
     
     
     private final IMove move;
+    
+    int i;
 
     /**
      * Instantiates a new controller facade.
@@ -53,10 +55,19 @@ public class ControllerFacade implements IController {
      */
     public void start() throws SQLException {
         this.getView().showWindow();
-		this.getModel().getinsertUser(this.getView().getUser1(), this.getView().getUser2());
-
+        while (i != 1) {
+        	if (this.getView().getUser1() == null && this.getView().getUser2() == null  ) {
+        	i = 0;
+        }
+        else {
+            this.getModel().getinsertUser(this.getView().getUser1(),this.getView().getUser2());
+            i = 1;
+        }
+        }
+        
+    
     }
-
+ 
     private Boolean collision (Graphics colision, int somethink_x, int somethink_y, Direction direction_somethink, Permeability permeability_somethink, int Stackkey  ) {
 		int local_x = 0;
 		int local_y = 0; 

@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -32,9 +33,7 @@ public interface IView {
 	JButton button(String z);
 	
 	public void showWindow();
-	
-	public void User(String user1, String user2);
-	
+		
 	public String getUser1();
 	
 	public String getUser2();

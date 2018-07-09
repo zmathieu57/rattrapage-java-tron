@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -26,9 +27,8 @@ public class ViewFacade implements IView, ActionListener {
 	
 
 	JFrame window1 = window("Tron : Main", 275, 175, Color.gray);
-	JFrame window2 = window("Tron : Game", 600, 400, Color.darkGray);
+	JFrame window2 = window("Tron : Game", 625, 450, Color.darkGray);
 	JPanel zonedraw = draw(Color.white);
-	JPanel zonedraw2 = draw(Color.darkGray);
 	JLabel text1 = text("Enter an ID before launching the game");
 	JTextField seizure1 = seizure(15);
 	JLabel text2 = text("Player 1");
@@ -69,7 +69,7 @@ public class ViewFacade implements IView, ActionListener {
      * @author mathi
      */
     public void game() {
-    	window2.add(zonedraw2);
+    	window2.add(new map());
     	window2.setVisible(true);
     }
     
@@ -136,10 +136,10 @@ public class ViewFacade implements IView, ActionListener {
         Object  source=e.getSource();
         
         if  (source==button1) {
-        	game();
         	window1.dispose();
-        	user1 = seizure1.getText();
-        	user2 = seizure2.getText();
+        	game();
+        	setUser1(seizure1.getText());
+        	setUser2(seizure2.getText());
         }
         else if (source==button2) {
         	System.exit(0);
@@ -180,7 +180,7 @@ public class ViewFacade implements IView, ActionListener {
 
 	public void setUser1(String user1) {
 		this.user1 = user1;
-	}
+	}	
 
 	public String getUser2() {
 		return user2;

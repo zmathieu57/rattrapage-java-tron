@@ -26,12 +26,11 @@ public abstract class Main {
      */
     public static void main(final String[] args) {
         final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade(), new Bike(Permeability.BIKE, Color.cyan, Direction.UP, 20, 380, true));
-
+        
         try {
             controller.start();
         } catch (final SQLException exception) {
             exception.printStackTrace();
         }
     }
-
 }
