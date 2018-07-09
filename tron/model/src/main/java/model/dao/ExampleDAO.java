@@ -20,7 +20,7 @@ public abstract class ExampleDAO extends AbstractDAO {
     private static String sqlinsertUser   = "{call insertUser(?,?)}";
     
     /**
-     * 
+     * @author mathi
      * @param winner
      * @return
      * @throws SQLException

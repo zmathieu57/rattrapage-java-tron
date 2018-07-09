@@ -2,6 +2,11 @@ package model.element;
 
 import java.awt.*;
 
+/**
+ * 
+ * @author mathi
+ *
+ */
 public interface IMove {
 	
 	public void moveUp(Graphics Up, int x, int y);

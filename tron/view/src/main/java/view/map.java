@@ -5,8 +5,16 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
+/**
+ * 
+ * @author mathi
+ *
+ */
 public class map extends JPanel {
 	
+	/**
+	 * @author mathi
+	 */
 	public void paintComponent(Graphics g) {
     	g.setColor(Color.cyan);
 		g.drawLine(10,10,590,10);

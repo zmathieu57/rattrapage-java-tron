@@ -42,13 +42,4 @@ public class Element implements IElement {
 		this.color = color;
 	}
 	
-	public void map() {
-		ElementFactory.getWall1();
-		ElementFactory.getWall2();
-		ElementFactory.getWall3();
-		ElementFactory.getWall4();
-		ElementFactory.getBike1();
-		ElementFactory.getBike2();
-
-	}
 }

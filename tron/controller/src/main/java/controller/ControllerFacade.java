@@ -26,7 +26,7 @@ public class ControllerFacade implements IController {
     /** The model. */
     private final IModel model;
     
-    
+    /** The move. */
     private final IMove move;
     
     int i;
@@ -68,6 +68,16 @@ public class ControllerFacade implements IController {
     
     }
  
+    /**
+     * @author mathi
+     * @param colision
+     * @param somethink_x
+     * @param somethink_y
+     * @param direction_somethink
+     * @param permeability_somethink
+     * @param Stackkey
+     * @return
+     */
     private Boolean collision (Graphics colision, int somethink_x, int somethink_y, Direction direction_somethink, Permeability permeability_somethink, int Stackkey  ) {
 		int local_x = 0;
 		int local_y = 0; 
@@ -110,6 +120,10 @@ break;
     	}
 }
     
+    
+    /**
+     * @author mathi
+     */
     public void Move1(Graphics move1, int x1, int y1, Direction direction1, Permeability permeability1, int key1)
 	{
 		if (key1 != 32) {
@@ -166,6 +180,10 @@ break;
 	}
 }
     
+    
+    /**
+     * @author mathi
+     */
     public void Move2(Graphics move2, int x2, int y2, Direction direction2, Permeability permeability2, int key2)
 	{
 		if (key2 != 32) {
@@ -221,7 +239,7 @@ break;
 		return;
 	}
 }
-       
+       /** Getter */
     public IView getView() {
         return this.view;
     }

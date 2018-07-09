@@ -146,6 +146,11 @@ public class ViewFacade implements IView, ActionListener {
         }   
     }
 	
+	
+	/**
+	 * @author mathi
+	 * @param key
+	 */
 	public void keyTyped(KeyEvent key) {
 
     }
@@ -160,11 +165,16 @@ public class ViewFacade implements IView, ActionListener {
 		this.getController().Move2();
     }
     
+    /**
+     * @author mathi
+     * @param key
+     */
     public void keyReleased(KeyEvent key) {
 
     }
     
 
+    /** Getter and Setter */
     public IController getController() {
 		return controller;
 	}
